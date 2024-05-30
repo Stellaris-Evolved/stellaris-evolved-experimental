@@ -1,0 +1,11 @@
+﻿l_english:
+ tec_loc_virtual_capacity_icon: "£mod_planet_carry_cap_add£"
+ tec_loc_virtual_capacity: "£mod_planet_carry_cap_add£ Virtual Pop Capacity"
+ mod_tec_virtual_capacity: "$tec_loc_virtual_capacity$"
+ mod_tec_virtual_capacity_short: "$tec_loc_virtual_capacity_icon$"
+
+ building_tec_virtual_storage: "Virtual Hub"
+ building_tec_virtual_storage_desc: "The Virtual Hub is a state-of-the-art facility designed to house and maintain virtual consciousnesses. Equipped with advanced quantum servers and AI management systems, it provides a stable and secure environment for virtual populations. Each Virtual Hub can support a substantial number of virtual pops, ensuring they have the resources and space to thrive in the Virtual realm."
+
+ building_tec_virtual_megastorage: "Virtual Nexus"
+ building_tec_virtual_megastorage_desc: "The Virtual Nexus represents the pinnacle of virtual infrastructure technology. With exponentially greater capacity and efficiency compared to the Virtual Hub, it utilizes cutting-edge neural networks and hyper-efficient data processing cores. The Virtual Nexus is capable of supporting a vast number of virtual pops, offering them an expansive virtual utopia where they can flourish beyond the limitations of the physical world."

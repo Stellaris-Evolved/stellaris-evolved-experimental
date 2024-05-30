@@ -1,0 +1,16 @@
+modifier = {
+    has_virtual_species_trait = yes
+    OR = {
+        tec_has_clerk_job = yes
+        planet = { tec_has_clerk_jobs_available = yes }
+    }
+    check_variable_arithmetic = {
+        which = planet.value:tecexp_remaining_virtual_capacity
+        value < 10
+    }
+    mult = 100000
+}
+modifier = {
+    has_virtual_species_trait = no
+    mult = 100000000
+}

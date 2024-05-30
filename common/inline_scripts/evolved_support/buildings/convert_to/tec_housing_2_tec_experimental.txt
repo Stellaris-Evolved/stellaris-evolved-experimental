@@ -1,0 +1,3 @@
+convert_to = {
+    building_tec_virutal_megastorage
+}

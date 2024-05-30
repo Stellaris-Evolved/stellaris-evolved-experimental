@@ -1,0 +1,12 @@
+@tec_tec_experimental_addon_present = 1
+
+@tecexp_capital_virtual_t1 = 5
+@tecexp_capital_virtual_t2 = 10
+@tecexp_capital_virtual_t3 = 15
+@tecexp_capital_virtual_t4 = 20
+@tecexp_capital_virtual_t5 = 25
+@tecexp_capital_virtual_t6 = 30
+
+@tecexp_capital_virtual_thab1 = 10
+@tecexp_capital_virtual_thab2 = 15
+@tecexp_capital_virtual_thab3 = 20

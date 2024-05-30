@@ -1,0 +1,62 @@
+tecexp_planet_has_non_virtual_job_free = {
+    check_variable_arithmetic = {
+        which = value:num_free_virtual_jobs
+        value > 0
+    }
+}
+
+tecexp_planet_cannot_sustain_virtual_pops = {
+    OR = {
+        is_planet_class = pc_cosmogenesis_world
+
+        inline_script = {
+            script = mod_support/tec_trigger_include
+            trigger = tecexp_planet_cannot_sustain_virtual_pops
+        }
+    }
+}
+
+tecexp_planet_requires_virtual_pops = {
+    is_under_colonization = no
+    tecexp_planet_cannot_sustain_virtual_pops = no
+    free_jobs > 0
+    free_housing > 0
+    tecexp_planet_has_non_virtual_job_free = yes
+    check_variable_arithmetic = {
+        which = value:tecexp_remaining_virtual_capacity
+        value > 0
+    }
+}
+
+
+tec_has_housing_building_swap_tec_experimental = {
+    OR = {
+        has_active_tradition = tr_virtuality_finish
+    }
+}
+
+tecexp_ai_allow_virtual_capacity_building = {
+    if = {
+        limit = {
+            owner = { is_ai = yes }
+        }
+        AND = {
+            free_district_slots = 0
+            free_building_slots > 2
+            check_variable_arithmetic = {
+                which = value:tecexp_remaining_virtual_capacity
+                value < 5
+            }
+        }
+    }
+    else = {
+        always = yes
+    }
+}
+
+tecexp_pop_provides_virtual_capacity = {
+    OR = {
+        tec_has_clerk_job = yes
+        tec_has_maintenance_drone_job = yes
+    }
+}

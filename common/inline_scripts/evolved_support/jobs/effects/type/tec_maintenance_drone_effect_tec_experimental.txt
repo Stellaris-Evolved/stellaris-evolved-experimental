@@ -1,0 +1,11 @@
+# evolved_support/jobs/effects/type/tec_maintenance_drone_effect_tec_experimental.txt
+
+triggered_planet_modifier = {
+    potential = {
+        exists = owner
+        owner = {
+            has_active_tradition = tr_virtuality_finish
+        }
+    }
+    tec_virtual_capacity = 1
+}

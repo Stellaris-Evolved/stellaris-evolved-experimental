@@ -1,0 +1,125 @@
+namespace = cybernetics
+
+### Create the Unemployed
+### Country scope gatekeeper
+### on_monthly_pulse_country
+country_event = {
+    id = cybernetics.5025
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        is_fallen_empire = no
+        has_active_tradition = tr_virtuality_finish
+        any_owned_planet = {
+            tecexp_planet_requires_virtual_pops = yes
+        }
+    }
+
+    immediate = {
+        random_owned_planet = {
+            limit = {
+                tecexp_planet_requires_virtual_pops = yes
+            }
+            planet_event = { id = cybernetics.2027 days = 1 }
+        }
+    }
+}
+
+### Create the Unemployed
+### Planet scope gatekeeper
+### on_building_complete, on_building_upgraded, on_building_demolished,
+### on_building_downgraded, on_building_replaced
+### on_district_complete, on_district_demolished
+planet_event = {
+    id = cybernetics.2026
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        exists = owner
+        owner = {
+            is_fallen_empire = no
+            has_active_tradition = tr_virtuality_finish
+        }
+        tecexp_planet_requires_virtual_pops = yes
+    }
+
+    immediate = {
+        planet_event = { id = cybernetics.2027 days = 1 }
+    }
+}
+
+### Create the Unemployed
+### Fired by cybernetics.2025 and cybernetics.2026
+planet_event = {
+    id = cybernetics.2027
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        exists = owner
+        owner = {
+            is_fallen_empire = no
+            has_active_tradition = tr_virtuality_finish
+        }
+        tecexp_planet_requires_virtual_pops = yes
+    }
+
+    immediate = {
+        set_variable = {
+            which = num_pops
+            value = value:tecexp_max_virtual_jobs_to_make
+
+        }
+
+        # Create pops for every free job
+        while = {
+            count = num_pops
+            limit = {
+                free_housing > 0
+            }
+            create_pop = {
+                species = owner_main_species
+            }
+        }
+        # Kill pops generated in excess (e.g. from forbidden jobs)
+        if = {
+            limit = {
+                any_owned_pop = {
+                    is_unemployed = yes
+                    is_robotic_species = yes
+                    has_virtual_species_trait = yes
+                }
+            }
+            every_owned_pop = {
+                limit = {
+                    is_unemployed = yes
+                    is_robotic_species = yes
+                    has_virtual_species_trait = yes
+                }
+                kill_pop = yes
+            }
+        }
+
+        calculate_modifier = yes
+        set_variable = {
+            which = pops_to_kill
+            value = value:tec_value|VALUE|tecexp_remaining_virtual_capacity|MULT|-1|
+        }
+
+        while = {
+            count = pops_to_kill
+            random_owned_pop = {
+                limit = {
+                    is_robotic_species = yes
+                    has_virtual_species_trait = yes
+                    tecexp_pop_provides_virtual_capacity = no
+                }
+                kill_pop = yes
+            }
+        }
+    }
+}

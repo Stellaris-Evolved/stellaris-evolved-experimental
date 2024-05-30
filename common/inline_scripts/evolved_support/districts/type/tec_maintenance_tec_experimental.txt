@@ -1,0 +1,19 @@
+# evolved_support/districts/type/tec_maintenance_tec_experimental.txt
+
+inline_script = {
+    script = tec_type_hint
+    float = $scale$
+    float = $secondary_scale$
+    trigger_block = "$trigger$"
+}
+
+triggered_planet_modifier = {
+    potential = {
+        $trigger$
+        exists = owner
+        owner = {
+            has_active_tradition = tr_virtuality_finish
+        }
+    }
+    tec_virtual_capacity = @[ $secondary_scale$ * 2 ]
+}
