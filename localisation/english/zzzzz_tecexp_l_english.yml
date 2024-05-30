@@ -1,6 +1,7 @@
 ﻿l_english:
  tec_loc_virtual_capacity_icon: "£mod_planet_carry_cap_add£"
- tec_loc_virtual_capacity: "£mod_planet_carry_cap_add£ Virtual Pop Capacity"
+ tec_loc_virtual_capacity_text: "Virtual Pop Capacity"
+ tec_loc_virtual_capacity: "£mod_planet_carry_cap_add£ $tec_loc_virtual_capacity_text$"
  mod_tec_virtual_capacity: "$tec_loc_virtual_capacity$"
  mod_tec_virtual_capacity_short: "$tec_loc_virtual_capacity_icon$"
 
@@ -9,3 +10,12 @@
 
  building_tec_virtual_megastorage: "Virtual Nexus"
  building_tec_virtual_megastorage_desc: "The Virtual Nexus represents the pinnacle of virtual infrastructure technology. With exponentially greater capacity and efficiency compared to the Virtual Hub, it utilizes cutting-edge neural networks and hyper-efficient data processing cores. The Virtual Nexus is capable of supporting a vast number of virtual pops, offering them an expansive virtual utopia where they can flourish beyond the limitations of the physical world."
+
+ tecexp_virtual_capacity_desc: "§E§H$tec_loc_virtual_capacity_text$§! ($tec_loc_virtual_capacity_icon$) represents planetary infrastructure made to specifically sustain ['trait:trait_robot_digital_2'] population. Virtual pops would automatically be created as long as you have free jobs and housing up to capacity instantly whenever any £building£ §YBuilding§! or §YDistrict§! is built. If Virtual Capacity is negative, Virtual pops will be killed instantly till there is surplus again.\n\n$tec_loc_virtual_capacity_text$ can be obtained from £district£ §YHousing§! and §YMaintenance§! Districts, §Y$mod_base_planet_clerks$§! and §Y$mod_base_planet_maintenancedrones$§! and from £building£ §YCapital§! and §YHousing§! Buildings"
+
+ tecexp_cui_virtual_capacity: "[tecexp_cui_virtual_capacity]"
+ tecexp_cui_virtual_capacity_negative: "§R[tecexp_virtual_capacity_value]§!"
+ tecexp_cui_virtual_capacity_neutral: "§Y[tecexp_virtual_capacity_value]§!"
+ tecexp_cui_virtual_capacity_positive: "§G[tecexp_virtual_capacity_value]§!"
+
+ tecexp_cui_virtual_capacity_effect: "§H$tec_loc_virtual_capacity_text$§!\nAvailable $tec_loc_virtual_capacity_text$: [tecexp_cui_virtual_capacity]\n\n$t$Provided $tec_loc_virtual_capacity_text$: §G[tecexp_virtual_capacity_provided]§!\n$t$Virtual Pop Usage (£pop£ §Y[tecexp_virtual_capacity_consumed]§!): §R[tecexp_virtual_capacity_consumed]§!\n$tec_loc_desc_separator$\n$tecexp_virtual_capacity_desc$"

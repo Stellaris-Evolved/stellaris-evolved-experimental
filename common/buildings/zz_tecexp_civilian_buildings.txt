@@ -7,7 +7,7 @@ building_tec_virtual_storage = {
     category = amenity
 
     upgrades = {
-        "building_tec_virutal_megastorage"
+        "building_tec_virtual_megastorage"
     }
 
     potential = {
@@ -57,7 +57,7 @@ building_tec_virtual_storage = {
     }
 }
 
-building_tec_virutal_megastorage = {
+building_tec_virtual_megastorage = {
     icon = building_drone_megastorage
     base_buildtime = @b2_time
     can_build = no

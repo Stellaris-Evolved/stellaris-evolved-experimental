@@ -1,0 +1,36 @@
+defined_text = {
+    name = tecexp_cui_virtual_capacity
+    text = {
+        trigger = {
+            check_variable_arithmetic = {
+                which = value:tecexp_remaining_virtual_capacity
+                value < 0
+            }
+        }
+        localization_key = tecexp_cui_virtual_capacity_negative
+    }
+    text = {
+        trigger = {
+            check_variable_arithmetic = {
+                which = value:tecexp_remaining_virtual_capacity
+                value > 0
+            }
+        }
+        localization_key = tecexp_cui_virtual_capacity_positive
+    }
+    default = tecexp_cui_virtual_capacity_neutral
+}
+
+defined_text = {
+    name = tecexp_virtual_capacity_value
+    value = value:tecexp_remaining_virtual_capacity
+}
+
+defined_text = {
+    name = tecexp_virtual_capacity_provided
+    value = modifier:tec_virtual_capacity
+}
+defined_text = {
+    name = tecexp_virtual_capacity_consumed
+    value = value:tecexp_used_virtual_capacity
+}

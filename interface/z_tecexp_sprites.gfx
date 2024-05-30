@@ -1,0 +1,7 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_tecexp_virtual_capacity"
+        texturefile = "gfx/interface/icons/modifiers/mod_planet_carry_cap_add.dds"
+        alwaystransparent = yes
+    }
+}

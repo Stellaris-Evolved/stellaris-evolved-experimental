@@ -13,14 +13,28 @@ country_event = {
         is_fallen_empire = no
         has_active_tradition = tr_virtuality_finish
         any_owned_planet = {
-            tecexp_planet_requires_virtual_pops = yes
+            OR = {
+                tecexp_planet_requires_virtual_pops = yes
+                check_variable_arithmetic = {
+                    which = value:tecexp_remaining_virtual_capacity
+                    value < 0
+                }
+
+            }
         }
     }
 
     immediate = {
         random_owned_planet = {
             limit = {
-                tecexp_planet_requires_virtual_pops = yes
+                OR = {
+                    tecexp_planet_requires_virtual_pops = yes
+                    check_variable_arithmetic = {
+                        which = value:tecexp_remaining_virtual_capacity
+                        value < 0
+                    }
+
+                }
             }
             planet_event = { id = cybernetics.2027 days = 1 }
         }
@@ -44,7 +58,14 @@ planet_event = {
             is_fallen_empire = no
             has_active_tradition = tr_virtuality_finish
         }
-        tecexp_planet_requires_virtual_pops = yes
+        OR = {
+            tecexp_planet_requires_virtual_pops = yes
+            check_variable_arithmetic = {
+                which = value:tecexp_remaining_virtual_capacity
+                value < 0
+            }
+
+        }
     }
 
     immediate = {
@@ -65,10 +86,18 @@ planet_event = {
             is_fallen_empire = no
             has_active_tradition = tr_virtuality_finish
         }
-        tecexp_planet_requires_virtual_pops = yes
+        OR = {
+            tecexp_planet_requires_virtual_pops = yes
+            check_variable_arithmetic = {
+                which = value:tecexp_remaining_virtual_capacity
+                value < 0
+            }
+
+        }
     }
 
     immediate = {
+        calculate_modifier = yes
         set_variable = {
             which = num_pops
             value = value:tecexp_max_virtual_jobs_to_make
@@ -107,7 +136,7 @@ planet_event = {
         calculate_modifier = yes
         set_variable = {
             which = pops_to_kill
-            value = value:tec_value|VALUE|tecexp_remaining_virtual_capacity|MULT|-1|
+            value = value:tec_value|VALUE|tecexp_remaining_virtual_capacity|MULT|-1|MIN|0|
         }
 
         while = {

@@ -1,0 +1,15 @@
+tecexp_cui_virtual_capacity_button_effect = {
+    potential = {
+        is_scope_type = planet
+        exists = owner
+        owner = {
+            has_active_tradition = tr_virtuality_finish
+        }
+    }
+    allow = {
+        always = yes
+    }
+    effect = {
+        custom_tooltip = tecexp_cui_virtual_capacity_effect
+    }
+}
