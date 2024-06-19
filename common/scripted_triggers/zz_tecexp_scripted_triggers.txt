@@ -1,4 +1,5 @@
 tecexp_planet_has_non_virtual_job_free = {
+    optimize_memory
     check_variable_arithmetic = {
         which = value:num_free_virtual_jobs
         value > 0
@@ -6,6 +7,7 @@ tecexp_planet_has_non_virtual_job_free = {
 }
 
 tecexp_planet_cannot_sustain_virtual_pops = {
+    optimize_memory
     OR = {
         is_planet_class = pc_cosmogenesis_world
 
@@ -17,6 +19,7 @@ tecexp_planet_cannot_sustain_virtual_pops = {
 }
 
 tecexp_planet_requires_virtual_pops = {
+    optimize_memory
     is_under_colonization = no
     tecexp_planet_cannot_sustain_virtual_pops = no
     free_jobs > 0
@@ -30,12 +33,14 @@ tecexp_planet_requires_virtual_pops = {
 
 
 tec_has_housing_building_swap_tec_experimental = {
+    optimize_memory
     OR = {
         has_active_tradition = tr_virtuality_finish
     }
 }
 
 tecexp_ai_allow_virtual_capacity_building = {
+    optimize_memory
     if = {
         limit = {
             owner = { is_ai = yes }
@@ -55,6 +60,7 @@ tecexp_ai_allow_virtual_capacity_building = {
 }
 
 tecexp_pop_provides_virtual_capacity = {
+    optimize_memory
     OR = {
         tec_has_clerk_job = yes
         tec_has_maintenance_drone_job = yes

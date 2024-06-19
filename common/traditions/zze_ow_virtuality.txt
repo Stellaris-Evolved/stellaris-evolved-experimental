@@ -1,0 +1,27 @@
+tr_virtuality_finish = {
+    modifier = {
+        ascension_perks_add = 1
+    }
+    on_enabled = {
+        hidden_effect = {
+            country_event = { id = cybernetics.5046 }
+            if = {
+                limit = {
+                    is_gestalt = yes
+                }
+                every_owned_leader = {
+                    limit = {
+                        is_councilor = yes
+                        is_ruler = no
+                    }
+                    set_gestalt_node_portrait_effect = yes
+                }
+            }
+            every_owned_planet = {
+                calculate_modifier = yes
+                planet_event = { id = cybernetics.2026 }
+            }
+        }
+    }
+    custom_tooltip_with_modifiers = tr_virtuality_finisher_modifier_desc
+}

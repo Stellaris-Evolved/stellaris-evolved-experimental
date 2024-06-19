@@ -1,4 +1,8 @@
 modifier = {
+    exists = owner
+    owner = {
+        has_active_tradition = tr_virtuality_finish
+    }
     has_virtual_species_trait = yes
     OR = {
         tec_has_clerk_job = yes
@@ -11,6 +15,10 @@ modifier = {
     mult = 100000
 }
 modifier = {
+    exists = owner
+    owner = {
+        has_active_tradition = tr_virtuality_finish
+    }
     has_virtual_species_trait = no
     mult = 100000000
 }

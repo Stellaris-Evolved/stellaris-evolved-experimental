@@ -25,7 +25,7 @@ country_event = {
     }
 
     immediate = {
-        random_owned_planet = {
+        every_owned_planet = {
             limit = {
                 OR = {
                     tecexp_planet_requires_virtual_pops = yes
